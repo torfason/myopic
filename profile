@@ -17,6 +17,18 @@ export EDITOR
 alias vi='$EDITOR' 
 alias edit='$EDITOR'
 
+# Get the host name, long and short form
+HOSTNAME_LONG=`hostname -f 2>/dev/null`
+if [ "$?" -ne "0" ]; then
+  HOSTNAME_LONG=`hostname`.`domainname`
+fi
+HOSTNAME_SHORT=`hostname -s 2>/dev/null`
+if [ "$?" -ne "0" ]; then
+  HOSTNAME_SHORT=`hostname`
+fi
+export HOSTNAME_SHORT
+export HOSTNAME_LONG
+
 # Set a nicer prompt by defining PS1
 #
 # Options include \h \u \w \W
