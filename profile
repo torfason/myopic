@@ -39,6 +39,11 @@ C_YELLOW="\[\e[0;33m\]"
 C_CLEAR="\[\e[0m\]"
 export PS1="$C_GREEN$HOSTNAME_SHORT [$C_YELLOW\W$C_GREEN]$ $C_CLEAR"
 
+# Set terminal title by defining PROMPT_COMMAND
+# Note that vimrc may define its own separate terminal title
+export TERM_TITLE_STRING='${USER}@${HOSTNAME_LONG} [${PWD/#$HOME/~}]'
+export PROMPT_COMMAND="echo -ne \"\033]0;$TERM_TITLE_STRING\007\""
+
 # Activate terminal color
 export TERM=xterm-color
 
