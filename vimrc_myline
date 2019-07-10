@@ -1,0 +1,19 @@
+
+" Status bar and ruler
+"
+" This file configures a somewhat nicer status bar compared to the default.
+" It is not as nice as the lightline plugin which should be preferred,
+" but this is a purely native version, suitable for use in minimal setups.
+"----------------------------------------
+
+" Set the status line
+set statusline=\%3n\ %t%(\ %m%)%(\ (%<%F)%)%=%(%{exists('*CapsLockStatusline')?CapsLockStatusline():''}\ %)%(%{exists('*WordProcessorStatusline')?WordProcessorStatusline():''}\ %)%(%r\ %)%(%h\ %)[FILE=%{&ff}/%Y]\ [%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")\"}=\%03.3b/\%02.2B]\ [POS=%01l,%03v\ (%p%%\ of\ %L)]\ 
+
+" Set the title string of the window
+set titlestring=Vim:\ %t%(\ %m%)%(\ \ (%<%F)%)
+
+" A few more configuration options
+set showmode                   " Display the current mode in the status line
+set showcmd                    " Show partially-typed commands in the status line
+set laststatus=2               " Always show status line 
+
