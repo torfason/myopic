@@ -32,10 +32,15 @@ set tabstop=4                  " The 'standard' tab-stop obtion, best to leave t
 set softtabstop=4              " Another one of the tab-stop options
 set shiftwidth=4               " The final tab-stop option
 set expandtab                  " Replace all tabs with spaces when entered
-"
+
 " Mappings (comments can not be appended in mappings)
 "----------------------------------------
 
 " Allow the use of jj instead of <Esc>
 imap jj <Esc>
 
+" Move up or down within wrapped lines
+nmap j gj
+vmap j gj
+nmap k gk
+vmap k gk
