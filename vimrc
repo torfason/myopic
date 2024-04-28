@@ -9,7 +9,6 @@ set ignorecase                 " Make searches case-insensitive
 set smartcase                  " Make searches case-sensitive if search string includes upper-case
 set showmatch                  " Show briefly matching bracket when closing it
 set wildmenu                   " Get useful hints when hitting <TAB> in command mode
-set nowrap                     " By default we do not want to wrap text
 set history=1000               " Remember last n commands
 set ttyfast                    " Smoother redraws
 set sessionoptions+=unix,slash " Store session info in Unix format
@@ -21,6 +20,12 @@ set hlsearch                   " Highlight search terms
 set winminheight=0             " Allow non-active windows to be squashed to zero
 set winminwidth=0              " Allow non-active windows to be squashed to zero
 set mouse=a                    " Enable full mouse support in the console [Overrides mswin.vim]
+set autoread                   " Automatically reload files on change (may work better on nvim than vim)
+
+" Wrapping options
+"----------------------------------------
+set nowrap                     " By default we do not want to wrap text
+set linebreak                  " But if we do wrap, we want to break on word boundaries
 
 " Options for indenting and tabs
 "----------------------------------------
@@ -39,8 +44,12 @@ set expandtab                  " Replace all tabs with spaces when entered
 " Allow the use of jj instead of <Esc>
 imap jj <Esc>
 
-" Move up or down within wrapped lines
+" Move up or down or to start/end within wrapped lines
 nmap j gj
 vmap j gj
 nmap k gk
 vmap k gk
+nmap 0 g0
+vmap 0 g0
+nmap $ g$
+vmap $ g$
