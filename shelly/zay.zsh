@@ -121,12 +121,20 @@ zay_cat() {
         local newline; newline=$'\n'
         local creturn; creturn=$'\r'
 
-        # Print the prefix once at the start
-        printf "%s" "$prefix"
+        # Variable to track if it is the first round
+        local first_round=true
+
 
         # Read and process input character by character
         # This syntax relies on zsh and does not work in bash or other shells
         while IFS= read -u 0 -k 1 current_char; do
+
+            # Print the prefix once at the start
+            if $first_round; then
+                printf "%s" "$prefix"
+                first_round=false
+            fi
+
             # If there's a remembered last character, print it now
             if [ -n "$last_char" ]; then
                 printf "%s" "$last_char"
@@ -145,8 +153,12 @@ zay_cat() {
             printf "%s" "$last_char"
         fi
 
-        # Ensure output ends correctly
-        echo
+        # Ensure output ends correctly with a newline. The check determines if any content
+        # was found in the pipe, because then the first_round variable is no longer true.
+        if ! $first_round; then
+            printf "$newline"
+        fi
+
     fi
 }
 
