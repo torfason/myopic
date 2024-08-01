@@ -11,6 +11,6 @@ zay_echo "Shell:  $ZSH_NAME$BASH / $BASH_VERSION$(zsh --version)"
 zay_middle
 echo "Shelly: "${_MYOPIC_PLUGIN_NAMES[@]}"" | fold -sw 60 | zay_cat
 zay_middle
-fortune | zay_echo
+fortune_short | zay_echo
 zay_bottom
 echo ""
