@@ -102,3 +102,6 @@ TIMER_THRESHOLD=1
 # Set ll aliases
 alias ll='ls -l'   # Also defined by omz
 alias lll='ls -la'
+
+# Prevent mv from overwriting without asking
+alias mv='mv -i'
