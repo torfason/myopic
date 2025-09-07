@@ -12,7 +12,6 @@ set wildmenu                   " Get useful hints when hitting <TAB> in command 
 set history=1000               " Remember last n commands
 set ttyfast                    " Smoother redraws
 set sessionoptions+=unix,slash " Store session info in Unix format
-set browsedir=buffer           " Start browsing in the directory of the file we are editing
 set scrolloff=3                " Always keep a few lines above/below cursor visible
 set sidescrolloff=10           " Always keep a few columns right/left of cursor visible
 set sidescroll=1               " Only shift one char when scrolling to the side
@@ -21,6 +20,9 @@ set winminheight=0             " Allow non-active windows to be squashed to zero
 set winminwidth=0              " Allow non-active windows to be squashed to zero
 set mouse=a                    " Enable full mouse support in the console [Overrides mswin.vim]
 set autoread                   " Automatically reload files on change (may work better on nvim than vim)
+
+" Commented out since nvim has started to complain about unsupported options
+"set browsedir=buffer           " Start browsing in the directory of the file we are editing
 
 " Wrapping options
 "----------------------------------------
